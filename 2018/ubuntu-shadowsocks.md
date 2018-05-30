@@ -1,5 +1,5 @@
 ---
-Title: 使用Ubuntu搭建Shadowsocks（小飞机）
+title: 使用Ubuntu搭建Shadowsocks（小飞机）
 ---
 
 ## 购买一台海外的vps
