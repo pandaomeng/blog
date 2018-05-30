@@ -1,8 +1,8 @@
-
-
 ```
 title: ubuntu-shadowsocks
 ```
+
+---
 
 # 使用Ubuntu搭建Shadowsocks（小飞机）
 
