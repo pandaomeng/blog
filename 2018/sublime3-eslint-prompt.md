@@ -1,5 +1,7 @@
 ---
 title: SublimeText3 配置 eslint提示
+date: 2018-05-30
+tag: [linux]
 ---
 
 ## 安装插件

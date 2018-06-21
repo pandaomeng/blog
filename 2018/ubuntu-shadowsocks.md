@@ -1,5 +1,7 @@
 ---
 title: 使用Ubuntu搭建Shadowsocks（小飞机）
+date: 2018-05-30
+tag: [shadowsocks]
 ---
 
 ## 购买一台海外的vps

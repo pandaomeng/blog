@@ -1,5 +1,7 @@
 ---
 title: 实现ssh 自动登录
+date: 2018-05-30
+tag: [linux]
 ---
 
 （expect 可能需要安装）
