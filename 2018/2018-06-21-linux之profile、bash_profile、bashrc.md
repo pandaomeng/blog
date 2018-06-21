@@ -1,7 +1,7 @@
 ---
 title: linux之profile、bash_profile、bashrc
-Date: 2018-06-21
-Tag: [linux]
+date: 2018-06-21
+tag: [linux]
 ---
 
 # linux之profile、bash_profile、bashrc
