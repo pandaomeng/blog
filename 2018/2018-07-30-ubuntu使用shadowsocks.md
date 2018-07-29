@@ -89,3 +89,26 @@ tag: [linux, ubuntu]
    ![](http://images.pandaomeng.com/f0ea757cbabaebe9f766731256cc0303.jpg)
 
 大功告成！
+
+PS: 
+
+- 重启服务器需要重新执行
+
+  ```
+  sslocal -c shawdowsocks.json -d start
+  export http_proxy="http://127.0.0.1:8123/"
+  ```
+
+- git 命令需要在后面跟参数
+
+  ```
+  --config http.proxy=localhost:8123
+  ```
+
+  举个栗子：
+
+  ```
+  git clone xxx --config http.proxy=localhost:8123
+  ```
+
+  
