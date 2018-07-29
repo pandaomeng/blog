@@ -1,7 +1,7 @@
 ---
 title: ubuntu使用shadowsocks
 date: 2018-07-30
-tag: [linux, ubuntu]
+tag: [linux, ubuntu, shadowsocks]
 ---
 
 ## 配置shadowsocks
