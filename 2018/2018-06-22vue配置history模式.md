@@ -4,8 +4,6 @@ date: 2018-06-22
 tag: [vue, vue-router]
 ---
 
-# vue配置history模式
-
 ## 前言
 
 引用官方的解释：

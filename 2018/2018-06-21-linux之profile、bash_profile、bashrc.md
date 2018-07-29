@@ -4,8 +4,6 @@ date: 2018-06-21
 tag: [linux]
 ---
 
-# linux之profile、bash_profile、bashrc
-
 ## profile、bash_profile、bashrc文件
 
 1. `profile` (/etc/profile`)
