@@ -1,6 +1,6 @@
 ---
 title: vuejs-templates静态资源目录src/assets、和static/区别
-date: 2018-07-30
+date: 2018-08-17
 tag: [vue, webpack]
 ---
 
