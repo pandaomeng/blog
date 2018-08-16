@@ -4,15 +4,15 @@ date: 2018-08-17
 tag: [vue, webpack]
 ---
 
-##src/assets/和static/区别和用法
+## src/assets/和static/区别和用法
 
 
 
-**一句话总结：第三方资源都放在static文件夹中（如脚本库），自己在项目中使用的一些资源都放在assets中**
+### **一句话总结：第三方资源都放在static文件夹中（如脚本库），自己在项目中使用的一些资源都放在assets中**
 
 
 
-传送门：
+### 文档传送门：
 
 vuejs-templates官方英文文档：http://vuejs-templates.github.io/webpack/static.html
 
@@ -22,7 +22,7 @@ PS: 理论看上面的文档，这里就不复制粘贴了
 
 
 
-总结：
+### 总结：
 
 区别1：
 
@@ -38,9 +38,9 @@ PS: 理论看上面的文档，这里就不复制粘贴了
 
 
 
-用代码举个栗子：(用各种方式引图片）
+### 用代码举个栗子：(用各种方式引图片）
 
-文件目录：
+#### 文件目录：
 
 +-- src
 
@@ -57,6 +57,8 @@ PS: 理论看上面的文档，这里就不复制粘贴了
 |   +-- images
 
 |       +-- logo.png
+
+#### 代码：
 
 ```
 HelloWorld.vue
@@ -103,21 +105,17 @@ export default {
 </script>
 ```
 
-log输出如下：
+#### log输出如下：
 
 ![](http://images.pandaomeng.com/89ca7e16bd4742a1c2ae54330aa57b84.jpg)
 
 (base64太长，就用图的形式贴出来了)
 
+#### 页面显示如下：
 
+![](http://images.pandaomeng.com/4cde2535d7f4ce0b4e84562ca88707b3.jpg)
 
-页面显示如下：
-
-![image-20180817014837409](/var/folders/yh/v92vcddn31z5z7w2ntp4xbd40000gn/T/abnerworks.Typora/image-20180817014837409.png)
-
-
-
-分析：
+#### 分析：
 
 - 分析 logo1, logo2, logo3, logo4 发现asssets只能通过require或者import引入，赋值字符串的方式行不通
 
