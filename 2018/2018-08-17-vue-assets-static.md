@@ -75,6 +75,7 @@ HelloWorld.vue
     <img width="80px;" :src="logo3">
     <img width="80px;" :src="logo4">
     <img width="80px;" :src="logo5">
+    <img width="80px;" src="../assets/logo.png">
     <img width="80px;" src="assets/logo.png">
     <img width="80px;" src="~assets/logo.png">
     <img width="80px;" src="/static/images/logo.png">
@@ -106,6 +107,7 @@ export default {
   }
 }
 </script>
+
 ```
 
 #### log输出如下：
@@ -116,13 +118,23 @@ export default {
 
 #### 页面显示如下：
 
-![](http://images.pandaomeng.com/4cde2535d7f4ce0b4e84562ca88707b3.jpg)
+![](http://images.pandaomeng.com/dda29bf7950fde866490a4b41cfe6ffc.jpg)
 
 #### 分析：
 
 - 分析 logo1, logo2, logo3, logo4 发现asssets只能通过require或者import引入，赋值字符串的方式行不通
 
 - 使用如下这种方式可以不用require
+
+  src中直接使用相对路径字符串，而不是将相对路径赋值给变量后再赋给src
+
+  对比logo4 和 第六个logo，唯一的区别是后者没有使用变量
+
+  ```
+  <img width="80px;" src="../assets/logo.png">
+  ```
+
+  或者
 
   ```
   <img width="80px;" src="~assets/logo.png"> // 有符号 ~ 的加持
@@ -148,13 +160,13 @@ export default {
   上面第四种
 
   ```
-  <img width="80px;" :src="logo4"> // logo4 为字符串
+  <img width="80px;" :src="logo4"> // logo4 为字符串变量
   ```
 
-  上面第六种
+  上面第七种
 
   ```
-  <img width="80px;" src="assets/logo.png"> // src同样为字符串，并且没有符号 ~ 的加持
+  <img width="80px;" src="assets/logo.png"> // src同样为字符串，并且没有符号 ~ 的加持，路径不对
   ```
 
   
