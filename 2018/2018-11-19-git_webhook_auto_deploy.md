@@ -71,6 +71,7 @@ tag: [git]
      console.log('Received a push event for %s to %s',
        event.payload.repository.name,
        event.payload.ref);
+       // ./run.sh 就是我们监听到push事件的时候执行的脚本
      	runCommand('sh', ['./run.sh'], function( txt ){
        console.log(txt);
      });
@@ -96,6 +97,10 @@ tag: [git]
    touch "$filename"
    ```
 
+   ```shell
+   chmod 755 run.sh
+   ```
+
 6. 启动项目
 
    ```shell
@@ -110,6 +115,8 @@ tag: [git]
    server {
            listen 80;
            server_name webhook.pandaomeng.com;
+           access_log   /var/log/nginx/access_webhook.log;
+           error_log    /var/log/nginx/error_webhook.log;
    
            location / {
                index  index.html index.htm;
@@ -128,22 +135,35 @@ tag: [git]
 
 8. 测试，进行一次推送，结果如下
 
-   ![image-20181124233233285](/var/folders/yh/v92vcddn31z5z7w2ntp4xbd40000gn/T/abnerworks.Typora/image-20181124233233285.png)
+   ![](http://images.pandaomeng.com/019d324fb2eb575621cba7aa3e122402.jpg)
 
    我们看到我们的run.js脚本生效了
 
+9. 将 run.js 的内容设置为我们的博客部署脚本就ok了
 
+   `run.js`
 
+   ```
+   cd ~/myhexo
+   hexo g
+   rm -rf /var/www/html/
+   cp -r ~/myhexo/public/ /var/www/html
+   ```
 
-
-
+10. 成功！接下来只要每次push新的博客，网站就会相应地更新了。
 
 
 
 注意事项：
 
 - 执行  `node index &` 之后，如果你改动文件，需要重新启动
-- 
+
+- 在步骤8的测试环节，通过以下命令，查看请求是否到达
+
+  ```shell
+  tail -f /var/log/nginx/access_webhook.log
+  ```
+
 
 
 

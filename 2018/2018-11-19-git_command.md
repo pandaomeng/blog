@@ -1,5 +1,5 @@
 ---
-title: git_command
+title: git 命令-记录
 date: 2018-11-19
 tag: [git]
 ---
