@@ -126,6 +126,7 @@ tag: [git]
    nginx -s reload
    ```
 
+8. 测试自动推送
 
 
 
