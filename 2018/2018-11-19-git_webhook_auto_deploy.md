@@ -1,5 +1,5 @@
 ---
-title: githook_auto_deploy
+title: git 使用 webhook 实现自动部署博客
 date: 2018-11-19
 tag: [git]
 ---
