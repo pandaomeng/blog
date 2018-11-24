@@ -126,9 +126,24 @@ tag: [git]
    nginx -s reload
    ```
 
+8. 测试，进行一次推送，结果如下
+
+   ![image-20181124233233285](/var/folders/yh/v92vcddn31z5z7w2ntp4xbd40000gn/T/abnerworks.Typora/image-20181124233233285.png)
+
+   我们看到我们的run.js脚本生效了
 
 
 
+
+
+
+
+
+
+注意事项：
+
+- 执行  `node index &` 之后，如果你改动文件，需要重新启动
+- 
 
 
 
