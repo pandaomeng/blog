@@ -144,6 +144,10 @@ tag: [git]
    `run.js`
 
    ```
+   #!/bin/bash
+   
+   cd ~/myhexo/source/_posts
+   git pull
    cd ~/myhexo
    hexo g
    rm -rf /var/www/html/
