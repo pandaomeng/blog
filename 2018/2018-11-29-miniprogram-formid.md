@@ -119,7 +119,7 @@ tag: [miniprogram]
    ps：
 
    - 组件FormIdCover的父节点必须设置position属性，只要不是static（即 将父节点设置为包含块）
-   - 设置的FormIdCover会盖住整个view，导致 #child 节点不可点击，但是不影响冒泡，即parent节点是可以捕获点击事件的。
+   - 设置的FormIdCover会盖住整个view，导致 #child 节点不可点击，但是不影响冒泡，即parent节点是可以捕获点击事件的。如果一定要让 #child 可点击，需要设置他的z-index。
 
 3. **如果点击收集formId的同时进行了跳转的动作**，获取formId的操作有几率被终止，因为两者是同步进行的。所以我们需要将跳转排在获取formId之后，即在bind:success="handle"的handle中进行跳转。
 
