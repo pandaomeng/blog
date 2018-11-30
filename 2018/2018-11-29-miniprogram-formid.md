@@ -1,6 +1,6 @@
 ---
 title: 微信小程序收集formid
-date: 2018-11-26
+date: 2018-11-29
 tag: [miniprogram]
 ---
 
