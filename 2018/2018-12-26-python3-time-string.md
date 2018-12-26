@@ -1,7 +1,7 @@
 ---
 title: python3 生成时间字符串
 date: 2018-12-26
-tag: [python]
+tag: [python3]
 ---
 
 ### 生成对应格式的时间字符串

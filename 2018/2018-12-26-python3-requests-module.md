@@ -1,7 +1,7 @@
 ---
 title: python3 requests 模块发送请求
 date: 2018-12-26
-tag: [python]
+tag: [python3]
 ---
 
 ### python3 requests 模块发送请求
