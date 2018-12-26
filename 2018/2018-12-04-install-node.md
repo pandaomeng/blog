@@ -14,24 +14,24 @@ tag: [node]
 
 1. 下载解压并且重命名
 
-```shell
-cd ~
-wget https://nodejs.org/dist/v8.12.0/node-v8.12.0-linux-x64.tar.xz
-xz -d node-v8.12.0-linux-x64.tar.xz
-tar -xvf node-v8.12.0-linux-x64.tar
-mv node-v8.12.0-linux-x64 /usr/local/node
-rm -f node-v8.12.0-linux-x64.tar
-```
+   ```shell
+   cd ~
+   wget https://nodejs.org/dist/v8.12.0/node-v8.12.0-linux-x64.tar.xz
+   xz -d node-v8.12.0-linux-x64.tar.xz
+   tar -xvf node-v8.12.0-linux-x64.tar
+   mv node-v8.12.0-linux-x64 /usr/local/node
+   rm -f node-v8.12.0-linux-x64.tar
+   ```
 
-1. 检查是否安装成功
+2. 检查是否安装成功
 
-```shell
-/usr/local/node/bin/node -v
-```
+   ```shell
+   /usr/local/node/bin/node -v
+   ```
 
-1. 为node npm设置软链，放到usr/bin下
+3. 为node npm设置软链，放到usr/bin下
 
-```shell
-ln -s /usr/local/node/bin/node /usr/bin/
-ln -s /usr/local/node/bin/npm  /usr/bin/
-```
+   ```shell
+   ln -s /usr/local/node/bin/node /usr/bin/
+   ln -s /usr/local/node/bin/npm  /usr/bin/
+   ```
