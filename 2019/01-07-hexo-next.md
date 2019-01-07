@@ -55,6 +55,12 @@ https://theme-next.iissnan.com/third-party-services.html
     #scheme: Gemini
    ```
 
+   ```git
+    motion:
+   -  enable: true
+   +  enable: false
+   ```
+
 ### 2）接入百度统计
 
  1. 登录百度站长统计，点击新建站点
