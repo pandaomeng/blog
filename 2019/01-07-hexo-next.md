@@ -34,34 +34,37 @@ https://theme-next.iissnan.com/third-party-services.html
 
 1. 编辑 `themes/next/_config.yml`
 
-   ```git
-   -seo: false
-   +seo: true
+   ```
+   # Site
+   title: 无趣的小帕
+   subtitle:
+   description: Just do it!
+   keywords: IT
+   author: pandaomeng
+   language: zh-Hans
+   timezone:
    ```
 
    ```git
-    menu:
-      home: / || home
-      #about: /about/ || user
-   -  #tags: /tags/ || tags
-   +  tags: /tags/ || tags
+   seo: true
    ```
 
    ```git
-    # Schemes
-   -scheme: Muse
-   +#scheme: Muse
-    #scheme: Mist
-   -#scheme: Pisces
-   +scheme: Pisces
-    #scheme: Gemini
+   menu:
+     tags: /tags/ || tags
    ```
 
    ```git
-    motion:
-   -  enable: true
-   +  enable: false
+   Schemes
+     scheme: Gemini
    ```
+
+   ```git
+   motion:
+     enable: false
+   ```
+
+<!--more-->
 
 ### 2）接入百度统计
 
@@ -182,4 +185,26 @@ model预览：https://huaji8.top/post/live2d-plugin-2.0/
 ​	篇幅较长，链接到另一篇文章：
 
 ​	https://www.pandaomeng.com/2019/01-04-gitalk-comment/
+
+### 7）侧边栏设置返回顶部，并且显示百分比
+
+1. 修改主题配置文件
+
+   sidebar 配置下：
+
+   ```
+   # Scroll percent label in b2t button.
+     scrollpercent: true
+   ```
+
+### 8）头像设置
+
+打开 **主题配置文件** 找到`Sidebar Avatar`字段
+
+```
+# Sidebar Avatar
+avatar: /images/header.jpg
+```
+
+这是头像的路径，只需把你的头像命名为`header.jpg`（随便命名）放入`themes/next/source/images`中，将`avatar`的路径名改成你的头像名就OK啦！
 
