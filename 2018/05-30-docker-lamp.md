@@ -18,6 +18,8 @@ tag: [docker]
    docker pull fauria/lamp
    ```
 
+   <!--more-->
+
 2. 运行容器：
 
    ```

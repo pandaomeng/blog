@@ -18,6 +18,8 @@ tag: [vue, vue-router]
 
 去掉#号的url好看了很多，那就让我们开始吧
 
+<!--more-->
+
 ## 前端配置
 
 ### vue 路由配置修改
@@ -54,7 +56,6 @@ const router = new VueRouter({
    service apache2 restart
    ```
 
-   
 
 ## Nginx 配置：
 

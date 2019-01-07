@@ -20,6 +20,8 @@ echo 'hello world' > html/index.html
 - **www**: 目录将映射为 nginx 容器配置的虚拟目录。
 - **conf**: 目录里的配置文件将映射为 nginx 容器的配置文件。
 
+<!--more-->
+
 ### 编辑 default.conf 如下：
 
 ```

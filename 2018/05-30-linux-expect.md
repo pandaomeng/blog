@@ -34,7 +34,7 @@ interact
 - spawn命令：spawn是进入expect环境后才可以执行的expect内部命令。
 - interact：执行完成后保持交互状态，把控制权交给控制台，这个时候就可以手工操作了。
 
-
+<!--more-->
 
 #### 实现git自动pull（http）
 

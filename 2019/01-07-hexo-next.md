@@ -22,7 +22,7 @@ tag: [blog, hexo, next]
    grep version _config.yml
    ```
 
-   <!--more-->
+<!--more-->
 
 ## 二、配置NexT
 
@@ -232,4 +232,3 @@ toc:
 效果图：
 
 ![](https://images.pandaomeng.com/bdbeeb05a7b3675feb26b6567aeee366.jpg)
-

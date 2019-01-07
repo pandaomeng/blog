@@ -25,6 +25,8 @@ tag: [vue, vue-cli]
 
 侧边栏 NavBar 常驻，content部分通过vue-router动态改变。但是这样就出现了个问题，登录页不想要NavBar该怎么办呢？我们配置多页，将login页面独立于原本的单页应用。
 
+<!--more-->
+
 ## 配置之前先创建文件
 
 `login.html` 、 `src/login.js`、`src/Login.vue`

@@ -18,6 +18,8 @@ tag: [git]
 - Secret：填写的密码，写controller接口的时候用到
 - Just the push event：这里我们只响应push事件
 
+<!--more-->
+
 
 
 ### 二、在自己的服务器上编写响应的接口

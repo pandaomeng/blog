@@ -32,6 +32,8 @@ tag: [python3]
    a == b: True
    ```
 
+   <!--more-->
+
 2. `\\u4E2D\\u56FD` 形如这样的字符串转码
 
    ```python

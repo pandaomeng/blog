@@ -12,6 +12,10 @@ Vim和Vi一样具有三种模式：命令模式（Command mode），插入模式
 
 详情查看[维基百科](https://zh.wikibooks.org/zh-hans/Vim/%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F)
 
+<!--more-->
+
+
+
 ## 常用命令
 
 ## 一、全局替换（底线命令模式）：

@@ -12,6 +12,8 @@ rem: font size of the root element
 
 rem作为一个单位，单位大小由它第一代老祖宗的**font-size**的大小决定，也就是html标签的**font-size**。例如我们设置html的font-size为10px，那么1.2rem就是12px，我们在所有需要用到px的地方全都使用rem来代替，这样我们只需要改变html的font-size就可以动态地改变内部所有元素的尺寸了。
 
+<!--more-->
+
 **实例**
 
 我们公司提供了宽度为375pt的设计图（pt后面会解释，暂时理解为px就好）。我以这个版本为基础来写页面。我设置html的font-size为10px，那么设计图上的所有关于pt的标注，我只要除以10，再加上rem作为单位就OK了。然后我只要在初始化页面的函数中加上如下代码，就完成了完美的适配。

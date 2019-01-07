@@ -20,7 +20,9 @@ apt-get update
 apt-get install mysql-server mysql-client
 ```
 
-安装的过程中，会提示你输入密码和确认密码。安装完成后，mysql服务会自动启动。 
+安装的过程中，会提示你输入密码和确认密码。安装完成后，mysql服务会自动启动。
+
+<!--more--> 
 
 2. **测试是否安装成功**
 

@@ -16,6 +16,8 @@ tag: [shadowsocks]
 
 2. 通过putty连上服务器
 
+   <!--more-->
+
 ## 配置服务器端ss
 
 安装python pip

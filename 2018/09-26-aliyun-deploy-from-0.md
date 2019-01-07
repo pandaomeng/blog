@@ -47,6 +47,8 @@ IdentitiesOnly yes
 ssh aliyun
 ```
 
+<!--more-->
+
 ### 给服务器改名
 
 登录后我们发现服务器实例名是一串很奇怪的字符串（就像这样 iZuf64a6e4zw2jzsp0ovjhZ）

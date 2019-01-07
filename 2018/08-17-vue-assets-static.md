@@ -20,7 +20,7 @@ vuejs-templates官方英文文档：http://vuejs-templates.github.io/webpack/sta
 
 PS: 理论看上面的文档，这里就不复制粘贴了
 
-
+<!--more-->
 
 ### 总结：
 

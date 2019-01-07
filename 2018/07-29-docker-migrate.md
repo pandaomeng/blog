@@ -18,6 +18,8 @@ tag: [docker]
    docker run --name  myubuntu -v /root:/root -p 80:80 -p 443:443 -it ubuntu /bin/bash
    ```
 
+   <!--more-->
+
 4. 此时在容器中了，下载nginx并启动
 
    ```

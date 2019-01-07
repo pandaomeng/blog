@@ -20,7 +20,7 @@ tag: [linux]
 
    和`profile`文件类似，`bash_profile`也会在用户登录（`login`）时生效，也可以用于设置环境变理。但与`profile`不同，`bash_profile`只会对当前用户生效。
 
-    
+    <!--more-->
 
 ## 设置alias别名
 

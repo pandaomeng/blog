@@ -33,6 +33,8 @@ tag: [linux, ubuntu, shadowsocks]
    sudo sslocal -c shawdowsocks.json -d start
    ```
 
+   <!--more-->
+
 ## 配置代理
 
 1. 安装polipo

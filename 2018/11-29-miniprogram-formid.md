@@ -25,6 +25,8 @@ tag: [miniprogram]
    </form>
    ```
 
+   <!--more-->
+
    `FormIdCover.wxss`
 
    ```scss
