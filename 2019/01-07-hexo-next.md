@@ -28,7 +28,9 @@ tag: [blog, hexo, next]
 
 https://theme-next.iissnan.com/third-party-services.html
 
-### 1) 开启一些基础配置
+**注意：以下配置就要重新生成后生效（hexo g)**
+
+### 1) 修改一些基础配置
 
 1. 编辑 `themes/next/_config.yml`
 
@@ -105,5 +107,79 @@ https://theme-next.iissnan.com/third-party-services.html
 
    https://github.com/iissnan/hexo-theme-next/issues/2174
 
+### 4）接入搜索功能
 
+1. 在博客根目录下执行以下命令：
+
+   ```
+   npm install hexo-generator-searchdb --save
+   ```
+
+2. 编辑根目录的配置文件 `_config.yml`
+
+   可以加在文件最后
+
+   ```
+   search:
+     path: search.xml
+     field: post
+     format: html
+     limit: 10000
+   ```
+
+3. 编辑主题配置文件 `themes/next/_config.yml`
+
+   ```
+   # Local search
+   local_search:
+     enable: true
+   ```
+
+4. 效果图
+
+   ![](https://images.pandaomeng.com/4b8cfc17666b09d32d26ac8520f603aa.jpg)
+
+### 5）接入上图的萌妹子看板娘
+
+github仓库：https://github.com/EYHN/hexo-helper-live2d
+
+model预览：https://huaji8.top/post/live2d-plugin-2.0/
+
+1. 往根目录的配置文件中加入
+
+   ```
+   live2d:
+     enable: true
+     scriptFrom: local
+     pluginRootPath: live2dw/
+     pluginJsPath: lib/
+     pluginModelPath: assets/
+     tagMode: false
+     log: false
+     model:
+       use: live2d-widget-model-shizuku
+     display:
+       position: right
+       width: 150
+       height: 300
+     mobile:
+       show: true
+   ```
+
+   注：上面用的model是live2d-widget-model-shizuku，所以我们要install她
+
+2. 载入model
+
+   在根目录：
+
+   ```shell
+   npm install --save hexo-helper-live2d
+   npm install --save live2d-widget-model-shizuku
+   ```
+
+### 6）接入动态评论系统gitalk
+
+​	篇幅较长，链接到另一篇文章：
+
+​	https://www.pandaomeng.com/2019/01-04-gitalk-comment/
 
