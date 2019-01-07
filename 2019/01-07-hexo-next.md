@@ -83,27 +83,21 @@ https://theme-next.iissnan.com/third-party-services.html
 1. 编辑 `themes/next/_config.yml`
 
    ```
-    busuanzi_count:
-      # count values only if the other configs are false
-   -  enable: false
-   +  enable: true
-      # custom uv span for the whole site
-      site_uv: true
-   -  site_uv_header: <i class="fa fa-user"></i>
-   +  site_uv_header: <i class="fa fa-user"></i> 访问人数
-      site_uv_footer:
-      # custom pv span for the whole site
-      site_pv: true
-   -  site_pv_header: <i class="fa fa-eye"></i>
-   -  site_pv_footer:
-   +  site_pv_header: <i class="fa fa-eye"></i> 总访问量
-   +  site_pv_footer: 次
-      # custom pv span for one page only
-      page_pv: true
-   -  page_pv_header: <i class="fa fa-file-o"></i>
-   -  page_pv_footer:
-   +  page_pv_header: <i class="fa fa-file-o"></i> 浏览
-   +  page_pv_footer: 次
+   busuanzi_count:
+     # count values only if the other configs are false
+     enable: true
+     # custom uv span for the whole site
+     site_uv: true
+     site_uv_header: <i class="fa fa-user"></i> 访问人数
+     site_uv_footer:
+     # custom pv span for the whole site
+     site_pv: true
+     site_pv_header: <i class="fa fa-eye"></i> 总访问量
+     site_pv_footer: 次
+     # custom pv span for one page only
+     page_pv: true
+     page_pv_header: <i class="fa fa-file-o"></i> 浏览
+     page_pv_footer: 次
    ```
 
 2. busuanzi 的域名失效问题解决，见issue
@@ -208,7 +202,7 @@ avatar: /images/header.jpg
 
 这是头像的路径，只需把你的头像命名为`header.jpg`（随便命名）放入`themes/next/source/images`中，将`avatar`的路径名改成你的头像名就OK啦！
 
-### 9）设置阅读全文
+### 9）设置"阅读全文"
 
 无需修改配置，你只需要在你的文章想要分隔的地方加上
 
@@ -218,5 +212,20 @@ avatar: /images/header.jpg
 
 就可以了
 
+![](https://images.pandaomeng.com/0bfb740025c3c3bed7569f5d542b1bfa.jpg)
 
+### 10）去掉文章目录标题的自动编号
+
+打开 **主题配置文件** 找到 `toc` 字段，将number改为false
+
+```
+toc:
+  enable: true
+
+  # Automatically add list number to toc.
+  number: false
+
+  # If true, all words will placed on next lines if header width longer then sidebar width.
+  wrap: false
+```
 
