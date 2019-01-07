@@ -22,6 +22,8 @@ tag: [blog, hexo, next]
    grep version _config.yml
    ```
 
+   <!--more-->
+
 ## 二、配置NexT
 
 参考NexT的官方文档：
@@ -63,8 +65,6 @@ https://theme-next.iissnan.com/third-party-services.html
    motion:
      enable: false
    ```
-
-<!--more-->
 
 ### 2）接入百度统计
 
@@ -207,4 +207,16 @@ avatar: /images/header.jpg
 ```
 
 这是头像的路径，只需把你的头像命名为`header.jpg`（随便命名）放入`themes/next/source/images`中，将`avatar`的路径名改成你的头像名就OK啦！
+
+### 9）设置阅读全文
+
+无需修改配置，你只需要在你的文章想要分隔的地方加上
+
+```
+<!--more-->
+```
+
+就可以了
+
+
 
