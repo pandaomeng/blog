@@ -68,7 +68,7 @@ service mysql restart
 
 1. 通过站长工具 http://tool.chinaz.com/port/ 测试 3306 端口是否开启
 
-![](http://images.pandaomeng.com/bcc723b3e2dd03e6c0d5c21c7e8e4863.jpg)
+![](https://images.pandaomeng.com/bcc723b3e2dd03e6c0d5c21c7e8e4863.jpg)
 
 	如果未开启，可能是阿里云后台的安全组没有放通3306端口
 

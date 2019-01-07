@@ -10,7 +10,7 @@ tag: [git]
 
 在如下路径做如下配置:
 
-![](http://images.pandaomeng.com/c5cabbce5e9512c2ca52159767b00fe4.jpg)
+![](https://images.pandaomeng.com/c5cabbce5e9512c2ca52159767b00fe4.jpg)
 
 解释：
 

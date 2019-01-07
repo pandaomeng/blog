@@ -86,7 +86,7 @@ tag: [linux, ubuntu, shadowsocks]
    curl www.google.com
    ```
 
-   ![](http://images.pandaomeng.com/f0ea757cbabaebe9f766731256cc0303.jpg)
+   ![](https://images.pandaomeng.com/f0ea757cbabaebe9f766731256cc0303.jpg)
 
 大功告成！
 
@@ -110,5 +110,3 @@ PS:
   ```
   git clone xxx --config http.proxy=localhost:8123
   ```
-
-  

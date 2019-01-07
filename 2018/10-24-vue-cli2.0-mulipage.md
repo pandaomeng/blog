@@ -154,7 +154,7 @@ plugins: [
 
 热加载的dev环境：
 
-![多页配置](http://images.pandaomeng.com/944df5d572ef76869f847756b86f0233.jpg)
+![多页配置](https://images.pandaomeng.com/944df5d572ef76869f847756b86f0233.jpg)
 
 大功告成啦~
 

@@ -26,7 +26,7 @@ tag: [docker]
    service nginx start
    ```
 
-   ![nginx运行成功](http://images.pandaomeng.com/169fcd3bdebbc6c95a1f4f7acc9b5bf3.jpg)
+   ![nginx运行成功](https://images.pandaomeng.com/169fcd3bdebbc6c95a1f4f7acc9b5bf3.jpg)
 
 5. 安装git
 
@@ -79,18 +79,16 @@ tag: [docker]
 
 10. 进入myhexo的source目录，配置自己的博客地址
 
-   ```
-   cd ~/myhexo/source/_posts
-   git init
-   git remote add origin git@github.com:pandaomeng/blog.git
-   git checkout master
-   ```
+  ```
+  cd ~/myhexo/source/_posts
+  git init
+  git remote add origin git@github.com:pandaomeng/blog.git
+  git checkout master
+  ```
 
-   重新部署
+  重新部署
 
-   ```
-   rm -rf /var/www/html
-   cp -r ~/myhexo/public /var/www/html
-   ```
-
-   
+  ```
+  rm -rf /var/www/html
+  cp -r ~/myhexo/public /var/www/html
+  ```

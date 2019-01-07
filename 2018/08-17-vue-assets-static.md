@@ -118,7 +118,7 @@ export default {
 
 #### 页面显示如下：
 
-![](http://images.pandaomeng.com/dda29bf7950fde866490a4b41cfe6ffc.jpg)
+![](https://images.pandaomeng.com/dda29bf7950fde866490a4b41cfe6ffc.jpg)
 
 #### 分析：
 
@@ -168,5 +168,3 @@ export default {
   ```
   <img width="80px;" src="assets/logo.png"> // src同样为字符串，并且没有符号 ~ 的加持，路径不对
   ```
-
-  
