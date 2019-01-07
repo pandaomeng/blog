@@ -135,7 +135,7 @@ tag: [git]
 
 8. 测试，进行一次推送，结果如下
 
-   ![](http://images.pandaomeng.com/019d324fb2eb575621cba7aa3e122402.jpg)
+   ![](https://images.pandaomeng.com/019d324fb2eb575621cba7aa3e122402.jpg)
 
    我们看到我们的run.js脚本生效了
 
