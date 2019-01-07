@@ -126,7 +126,8 @@ tag: [miniprogram]
 3. **如果点击收集formId的同时进行了跳转的动作**，获取formId的操作有几率被终止，因为两者是同步进行的。所以我们需要将跳转排在获取formId之后，即在bind:success="handle"的handle中进行跳转。
 
 
-## 二、将view改成button
+
+### 二、将view改成button
 
 1. 在 app.wxss 中设置通用样式
 
