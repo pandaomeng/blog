@@ -1,7 +1,7 @@
 ---
 title: Mac Sublime 快捷键
 date: 2018-06-07
-tag: [mac, hotkey]
+tag: [sublime, hotkey]
 ---
 
 | 按键         | 命令                                            |
