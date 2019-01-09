@@ -14,6 +14,8 @@ tag: [blog, hexo]
 
    ![](https://images.pandaomeng.com/fde56d5000220ecfc9e8a3e469bbe893.jpg)
 
+   <!--more-->
+
 2. 编辑该文件
 
    ```sbhell
