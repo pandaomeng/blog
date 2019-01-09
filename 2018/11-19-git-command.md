@@ -108,6 +108,22 @@ tag: [git]
 
 
 
+7. 修改的文件已被git commit，但想再次修改不再产生新的Commit
+
+   ```
+   git add sample.txt
+   git commit --amend -m"说明"
+   ```
+
+
+
+8. revert回滚：放弃制定的提交，会产生一个新的commit，历史记录都在
+
+   ```
+   git revert <commitID>
+   ```
+
+
 
 
 
