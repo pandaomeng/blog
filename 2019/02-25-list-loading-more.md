@@ -35,12 +35,12 @@ tag: [miniprogram]
 
 ```
 data: {
-	list: [], // 列表
-	currentPage: 0, // 当前页
-	count: 0, // 列表总数
-	moreLoading: false, // 是否正在加载更多
-	pageLoading: false, // 控制页面整体的loading的变量
-}
+  list: [], // 列表
+  currentPage: 0, // 当前页
+  count: 0, // 列表总数
+  moreLoading: false, // 是否正在加载更多
+  pageLoading: false, // 控制页面整体的loading的变量
+},
 ```
 
 在wxml结构中：
@@ -58,40 +58,40 @@ data: {
 
 ```
 async onLoad() {
-	this.setData({
-    	pageLoading: true,
-    })
-    await this.goPage()
-    this.setData({
-    	pageLoading: false,
-    })
+  this.setData({
+    pageLoading: true,
+  })
+  await this.goPage()
+  this.setData({
+    pageLoading: false,
+  })
 },
 goPage() {
-	return new Promise(async resolve => {
-	  	const res = await axios.get('/users', {
-            page: this.currentPage,
-            pageSize: 10,
-		})
-		if (res.code !== 1001) {
-            resolve(false)
-		}
-		this.setData({
-			list: list.contact(res.result.items || []),
-			count: res.result.count,
-		})
-        resolve()
-	})
+  return new Promise(async (resolve) => {
+    const res = await axios.get('/users', {
+      page: this.currentPage,
+      pageSize: 10,
+    })
+    if (res.code !== 1001) {
+      resolve(false)
+    }
+    this.setData({
+      list: this.data.list.contact(res.result.items || []),
+      count: res.result.count,
+    })
+    resolve()
+  })
 },
 async onReachBottom() {
-	if (list.length === this.data.count) return // 没有更多后不再请求
-    this.setData({
-    	currentPage: currentPage + 1,
-    	moreLoading: true,
-    })
-    await this.goPage() // 执行请求，page参数使用currentPage
-    this.setData({
-   		moreLoading: true,
-    })
+  if (this.data.list.length === this.data.count) return // 没有更多后不再请求
+  this.setData({
+    currentPage: this.data.currentPage + 1,
+    moreLoading: true,
+  })
+  await this.goPage() // 执行请求，page参数使用currentPage
+  this.setData({
+    moreLoading: true,
+  })
 },
 ```
 
