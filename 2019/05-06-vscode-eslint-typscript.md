@@ -34,6 +34,8 @@ tsc -v
 
    一路回车后，node项目就初始化完毕了
 
+3. 通过命令 tsc --init 初始化一个tsconfig.json文件
+
 <!--more-->
 
 ## ESLint
@@ -144,8 +146,6 @@ tsc -v
 
 
 参考：[eslint的规则](https://eslint.org/docs/rules/) 、[typescript-eslint的规则](https://github.com/typescript-eslint/typescript-eslint/tree/v1.7.0/packages/eslint-plugin/docs/rules)、[airbnb的规则](https://github.com/airbnb/javascript)
-
-
 
 
 
