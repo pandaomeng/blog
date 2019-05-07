@@ -34,6 +34,8 @@ tsc -v
 
    一路回车后，node项目就初始化完毕了
 
+<!--more-->
+
 ## ESLint
 
 1. 全局安装eslint
