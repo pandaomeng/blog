@@ -47,12 +47,6 @@ tag: [js]
 
 
 
-
-
-
-
-
-
 总结：
 
 - apply 、 call 、bind 三者都是用来改变函数的this对象的指向的；
