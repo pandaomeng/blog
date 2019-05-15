@@ -18,9 +18,8 @@ date: 2019-05-16
  - 潘道蒙/男/1996 
  - 本科/南京信息工程大学/软件工程专业
  - 工作年限：1年
- - 技术博客：https://www.pandaomeng.com 
- - Github：http://github.com/pandaomeng 
-
+ - 技术博客：https://www.pandaomeng.com
+ - Github：http://github.com/pandaomeng
  - 期望职位：Web前端开发
  - 期望城市：上海
 
