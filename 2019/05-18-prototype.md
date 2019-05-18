@@ -14,7 +14,7 @@ tag: [js]
 
    > Object.getPrototypeOf(new Foobar()) 与 Foobar.prototype 指向同一个对象
 
-3. 对象原型 即 对象的原型 即 对象的原型对象，以为原型也是一个对象
+3. 对象原型 即 对象的原型 即 对象的原型对象，因为原型也是一个对象
 
 4. 区别 doSomething() 和 new doSomething()
 
