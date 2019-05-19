@@ -8,7 +8,7 @@ tag: [js]
 
 ## 对象原型
 
-1. 对象的原型可以通过 Object.getPrototypeOf(obj) 或者 obj.\__proto\_\_（弃用）得到
+1. 对象的原型可以通过 Object.getPrototypeOf(obj) 或者 obj.\_\_proto\_\_（弃用）得到
 
 2. 区别对象的原型 obj.\_\_proto\_\_ 和构造函数的 prototype 属性
 
