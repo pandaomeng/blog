@@ -84,3 +84,66 @@ dp[i][j][k] = (r=i+1->rows -1)Σdp[r][j][k-1] + (r=j+1->cols -1)Σdp[i][r][k-1]
 
 对于任意的 披萨 (i, j)，我们遍历他们所有的切割方法（包括横切和纵切），记每种切割完后剩余的披萨为 `(i', j')`，则剩余的披萨的情况数可以用`dp[i'][j'][k-1]`来表示，我们将所有的这些子情况数加起来，就得到了`dp[i][j][k]`
 
+
+
+## 代码
+
+```javascript
+var ways = function (pizza, k) {
+  let row = pizza.length;
+  let column = pizza[0].length;
+  let remainMatrix = new Array(row).fill(null).map((each) => []);
+  let mod = 1e9 + 7;
+
+  for (let i = row - 1; i >= 0; i--) {
+    for (let j = column - 1; j >= 0; j--) {
+      let current = pizza[i][j] === 'A' ? 1 : 0;
+      if (i === row - 1) {
+        remainMatrix[i][j] = (remainMatrix[i][j + 1] || 0) + current;
+        continue;
+      }
+      if (j === column - 1) {
+        remainMatrix[i][j] = (remainMatrix[i + 1][j] || 0) + current;
+        continue;
+      }
+
+      remainMatrix[i][j] =
+        remainMatrix[i][j + 1] +
+        remainMatrix[i + 1][j] +
+        current -
+        remainMatrix[i + 1][j + 1];
+    }
+  }
+
+  let dp = [];
+  for (let i = 0; i < row; i++) {
+    dp[i] = new Array();
+    for (let j = 0; j < column; j++) {
+      dp[i][j] = new Array(k).fill(0);
+    }
+  }
+
+  for (let i = row - 1; i >= 0; i--) {
+    for (let j = column - 1; j >= 0; j--) {
+      if (remainMatrix[i][j] > 0) dp[i][j][0] = 1;
+
+      for (let cut = 1; cut < k; cut++) {
+        // 横着切
+        for (let r = i + 1; r < row; r++) {
+          if (remainMatrix[i][j] - remainMatrix[r][j] > 0) {
+            dp[i][j][cut] = (dp[r][j][cut - 1] + dp[i][j][cut]) % mod;
+          }
+        }
+        // 竖着切
+        for (let r = j + 1; r < column; r++) {
+          if (remainMatrix[i][j] - remainMatrix[i][r] > 0) {
+            dp[i][j][cut] = (dp[i][r][cut - 1] + dp[i][j][cut]) % mod;
+          }
+        }
+      }
+    }
+  }
+  return dp[0][0][k - 1];
+};
+```
+
