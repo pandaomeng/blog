@@ -20,7 +20,7 @@ git remote prune origin
 
 ### 清除本地的分支
 
-通过以下命令我们可以找到所有带有 fix 或者 MERCURY 的分支
+通过以下命令我们可以找到所有带有 fix 或者 feat 的分支
 
 ```
 git branch | grep -E 'fix|feat'
