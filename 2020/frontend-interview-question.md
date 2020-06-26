@@ -33,7 +33,7 @@ sayHi.myCall(a)
 同 call 的实现，只有接收参数的地方不同。
 
 ```
-Function.prototype.myCall = function (context, args) {
+Function.prototype.myApply = function (context, args) {
 		......
 }
 ```
