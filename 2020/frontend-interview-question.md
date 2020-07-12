@@ -83,3 +83,10 @@ foo.myBind(a, 'world')(99)
 
 1.  有几种继承方式
 2. 
+
+
+
+
+
+## Reflect
+
