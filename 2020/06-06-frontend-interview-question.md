@@ -79,6 +79,8 @@ foo.myBind(a, 'world')(99)
 
 
 
+
+
 ## 继承相关
 
 1.  有几种继承方式
@@ -88,5 +90,55 @@ foo.myBind(a, 'world')(99)
 
 
 
+## Class
+
+### Class 转成 es5 之后的代码
+
+
+
+
+
+
+
 ## Reflect
+
+
+
+
+
+## 判断数据的类型
+
+可以通过 typeof 或者 instanceof 来判断数据的类型
+
+typeof 只能判断基础数据类型，instanceof  可以用来判断的对象的类型
+
+A instanceof B  判断 B 是否存在于 A 的原型链上
+
+如何通过 instanceof 来判断一个基础数据类型？
+
+答：创建一个类 ，改写这个 function 的 [Symbol.hasInstance] 方法
+
+```js
+class PrimitiveString {
+	static [Symbol.hasInstance] = (x) => {
+    return typeof x === 'string'
+  }
+}
+
+// 用 es5 实现
+function PrimitiveString() {}
+Object.defineProperty(PrimitiveString, Symbol.hasInstance, {
+    value: function (x) {
+      return typeof x === 'string';
+    }
+});
+
+// 错误的写法，错误的原因：通过 Assignment 的方式去改写 [Symbol.xxx] 属性不会生效。
+function PrimitiveString() {}
+PrimitiveString[Symbol.hasInstance] = function (x) {
+  return typeof x === 'string';
+}
+```
+
+
 
