@@ -1,6 +1,10 @@
+---
+title: webpack 知识点梳理
+date: 2021-04-10
+tag: [webpack]
+---
 
-
-# webpack
+# webpack 知识点梳理
 
 ## 基本配置
 
@@ -80,7 +84,7 @@ export default 'data:imgae/jpeg:base64....'
 
 ```js
 output: {
-	filename: 'bundle.[currentHash:8].js'
+  filename: 'bundle.[currentHash:8].js'
 }
 ```
 
@@ -101,8 +105,8 @@ output: {
    ```js
    // webpack.common.js
    entry: {
-   	index: path.join(srcPath, 'index.js'),
-   	other: path.join(srcPath, 'other.js'),
+     index: path.join(srcPath, 'index.js'),
+     other: path.join(srcPath, 'other.js'),
    }
    ```
 
@@ -111,8 +115,8 @@ output: {
    ```js
    // webpack.prod.js
    output: {
-   	filename: 'bundle.[currentHash:8].js'
-   	path: distPath, // 输出文件路径
+     filename: 'bundle.[currentHash:8].js',
+     path: distPath, // 输出文件路径
    }
    ```
 
@@ -124,17 +128,17 @@ output: {
    // webpack.common.js
    // 配置多入口
    plugins: [
-   	new HtmlWebpackPlugin({
-   		template: path.join(srcPath, 'index.html'),
-   		filename: 'index.html',
-   		// 如果不指定 chunks，会引入所有 chunks
-   		chunks: ['index']
-   	}),
-   	new HtmlWebpackPlugin({
-   		template: path.join(srcPath, 'other.html'),
-   		filename: 'other.html',
-   		chunks: ['other']
-   	})
+     new HtmlWebpackPlugin({
+       template: path.join(srcPath, 'index.html'),
+       filename: 'index.html',
+       // 如果不指定 chunks，会引入所有 chunks
+       chunks: ['index']
+     }),
+     new HtmlWebpackPlugin({
+       template: path.join(srcPath, 'other.html'),
+       filename: 'other.html',
+       chunks: ['other']
+     })
    ]
    ```
 
@@ -161,7 +165,7 @@ rules: [
 plugin: [
   // 抽离 css 文件
   new MiniCssExtractPlugin: {
-  	 filename: 'css/main.[contenthash:8].css'
+      filename: 'css/main.[contenthash:8].css'
   }
 ],
 optimization: {
@@ -175,24 +179,24 @@ optimization: {
 
 ```js
 plugins: [
-	new HtmlWebpackPlugin({
-		template: path.join(srcPath, 'index.html'),
-		filename: 'index.html',
-		chunks: ['index', 'vender', 'common']
-	}),
-	new HtmlWebpackPlugin({
-		template: path.join(srcPath, 'other.html'),
-		filename: 'other.html',
-		chunks: ['other', 'common']
-	})
-]
+  new HtmlWebpackPlugin({
+    template: path.join(srcPath, 'index.html'),
+    filename: 'index.html',
+    chunks: ['index', 'vender', 'common']
+  }),
+  new HtmlWebpackPlugin({
+    template: path.join(srcPath, 'other.html'),
+    filename: 'other.html',
+    chunks: ['other', 'common']
+  })
+],
 optimization: {
   sliptChunks: {
     /** initial 入口 chunk，对于异步导入的 chunk 不处理
-    	* async 异步 chunk，只对异步导入的文件处理
-    	* all 全部 chunk
-    	*/
-    chunks: 'all'
+      * async 异步 chunk，只对异步导入的文件处理
+      * all 全部 chunk
+      */
+    chunks: 'all',
     // 缓存分组
     cacheGroups: {
       vendor: {
@@ -239,8 +243,8 @@ setTimeout(() => {
    ```
    // .babelrc
    {
-   	"presets": ["@babel/preset-react"]
-   	"plugins": []
+     "presets": ["@babel/preset-react"],
+     "plugins": []
    }
    ```
 
@@ -248,15 +252,14 @@ setTimeout(() => {
 
    ```js
    module: {
-   	rules: [
+     rules: [
        {
-   			test: '/\.vue$/',
+         test: '/\.vue$/',
          loader: ['vue-loader'],
          include: srcPath
        }
      ]
    }
-   
    ```
 
 ### module vs. chunk vs. bundle
@@ -334,21 +337,21 @@ const HappyPack = require('happypack')
 ```js
 // webpack.prod.js
 module: {
-	rules: [
-		{
-			test: /\.js$/,
-			use: ['happypack/loader?id=babel'],
-			include: srcPath,
-		}
-	]
+  rules: [
+    {
+      test: /\.js$/,
+      use: ['happypack/loader?id=babel'],
+      include: srcPath,
+    }
+  ]
 },
 plugins: [
-	new HappyPack({
-		// 用唯一的标标识符 id 来代表当前的 HappyPack 是用来处理哪一类特定的文件
-		id: 'babel',
-		// 如何处理 .js 文件，用法核 loader 配置一样
-		loaders: ['babel-loader?cacheDirectory']
-	})
+  new HappyPack({
+    // 用唯一的标标识符 id 来代表当前的 HappyPack 是用来处理哪一类特定的文件
+    id: 'babel',
+    // 如何处理 .js 文件，用法核 loader 配置一样
+    loaders: ['babel-loader?cacheDirectory']
+  })
 ]
 ```
 
