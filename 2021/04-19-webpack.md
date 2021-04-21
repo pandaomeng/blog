@@ -191,7 +191,7 @@ plugins: [
   })
 ],
 optimization: {
-  sliptChunks: {
+  splitChunks: {
     /** initial 入口 chunk，对于异步导入的 chunk 不处理
       * async 异步 chunk，只对异步导入的文件处理
       * all 全部 chunk
@@ -210,7 +210,7 @@ optimization: {
         },
         // 公用模块
         common: {
-          name: 'vender', // chunk 名称
+          name: 'common', // chunk 名称
           priotrity: 0, // 优先级
           test: /node_modules/, // 
           minSize: 10 * 1024, // 模块的大小限制
@@ -233,7 +233,7 @@ setTimeout(() => {
   import(/* webpackChunkName: "dynamic" */ './dynamic-data.js').then(res => {
     console.log(res.default.message)
   })
-})
+}, 5000)
 ```
 
 ### 处理 jsx 和 vue
@@ -487,29 +487,29 @@ webpack 已经内置 DllPlugin 支持
 - 合理分包，不重复加载
 - 速度更快、内存使用更少
 
-### 小图片 base64 编码
+### 1. 小图片 base64 编码
 
 使用 url-loader 配置 limit
 
-### bundle 使用 hash
+### 2. bundle 使用 hash
 
 可以使用缓存
 
-### 懒加载
+### 3. 懒加载
 
 ```js
 import('./dynamic-data.js').then()
 ```
 
-### 提取公共代码
+### 4. 提取公共代码
 
 optimization.splitChunks
 
-### IgnorePlugin
+### 5. IgnorePlugin
 
 IgnorePlugin 直接不引于，代码中没有无用的代码
 
-### 使用 cdn 加速
+### 6. 使用 cdn 加速
 
 ```js
 output: {
@@ -522,15 +522,13 @@ output: {
 1. output 中配置 publicPath，以及静态资源配置 publicPath
 2. 上传静态文件
 
-### Tree-shaking
+### 7. Tree-shaking
 
 // TODO
 
-### Scope Hosting
+### 8. Scope Hosting
 
 // TODO
-
-
 
 
 
