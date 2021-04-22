@@ -14,13 +14,13 @@ tag: [webpack]
 
 webpack.dev.js、webpack.prod.js 通过  webpack-merge 的 smart 继承 webpack.common.js
 
-```
+```js
 import { smart } from 'webpack-merge'
 ```
 
 在 webpack5 中，更改为
 
-```
+```js
 import merge from 'webpack-merge'
 ```
 
@@ -92,7 +92,7 @@ output: {
 
 ### 模块化
 
-为什么可以使用 import output 的语法？
+TODO: 为什么可以使用 import output 的语法？
 
 
 
@@ -261,14 +261,6 @@ setTimeout(() => {
      ]
    }
    ```
-
-### module vs. chunk vs. bundle
-
-- module 各个源码文件，webpack 中一切皆模块
-- chunk 多模块合并成的，来源：entry、import()、splitChunk
-- bundle 最终的输入文件，一般一个 chunk 对应一个 bundle
-
-chunk 是偏抽象的一个概念，bundle 是 chunk 的输出实体
 
 
 
@@ -469,15 +461,7 @@ webpack 已经内置 DllPlugin 支持
 
 1. 通过 DllPlugin 打包出 dll 文件
 
-   ```js
-   
-   ```
-
 2. 通过 DllReferencePlugin 引用 dll 文件
-
-// TODO
-
-
 
 ## 性能优化 - 优化产出代码
 
@@ -522,13 +506,119 @@ output: {
 1. output 中配置 publicPath，以及静态资源配置 publicPath
 2. 上传静态文件
 
-### 7. Tree-shaking
+### 7. 使用 mode production（包括 Tree-Shaking）
 
-// TODO
+- 自动开启代码压缩
+- Vue React 等会自动删掉调试代码（如开发环境的 warning）
+- 启用 Tree-Shaking，只有 ES6 Module 才能让 tree-shaking 生效
 
-### 8. Scope Hosting
+Tree-Shaking 举例
 
-// TODO
+```js
+// math.js
+export const add = (a, b) => a + b;
+
+export const multi = (a, b) => a * b
+```
+
+在实际使用的地方只有使用到 add，那么 multi 就不会被打包
+
+#### ES6 Module vs. Commonjs
+
+- ES6 Module 静态引入，编译时引入
+- commonjs 动态引入，执行时引入
+- 只有 ES6 Module 才能静态分析，实现 Tree-shaking
+
+### 8. Scope Hoisting
+
+打包出来的代码中，每个文件一个函数会合并成一个函数
+
+好处：
+
+- 代码体积更小
+- 创建函数作用域更少
+- 代码可读性好
+
+```js
+const ModuleConcatenationPlugin = require('webpack/lib/optimize/ModuleConcatenationPlugin')
+
+module。exports = {
+  resolve: {
+    // 针对 npm 中的第三方模块优先采用 jsnext:main 中指向的 ES6 模块化语法的文件
+    mainFields: ['jsnext:main', 'browser', 'main']
+  },
+  plugins: [
+    // 开启 scope hoisting
+    new ModuleConcatenationPlugin()
+  ]
+}
+```
+
+
+
+## babel
+
+babel 只对语法进行转换，对于新的 api 不进行转换，例如 Promise 或者 [].includes
+
+新的语法需要使用 babel-polyfill 进行转换
+
+babel 也不管模块化，所以需要配合 webpack 使用
+
+### 环境搭建 & 基本配置
+
+.babelrc
+
+```json
+{
+  "presets": [
+    ["@babel/preset-env"]
+  ],
+  "plugins": []
+}
+```
+
+使用  babel 转换 js 文件
+
+```shell
+npx babel index.js
+```
+
+### babel-polyfill
+
+polyfill 即布丁，babel-polyfill = core-js + regenerator，在 babel 7.4 之后弃用，推荐直接使用 core-js & regenerator
+
+#### core-js & regenerator
+
+core-js 是一系列 polyfill 的合集
+
+regenerator 对 generator 语法进行补充支持
+
+#### 配置按需引入
+
+.babelrc
+
+```json
+{
+  "presets": [
+    [
+      "@babel/preset-env", 
+      {
+        "useBuiltIns": 'usage',
+        "corejs": 3,
+      }
+    ]
+  ],
+  "plugins": []
+}
+```
+
+### babel-runtime
+
+babel-polyfill 会污染全局环境，
+
+使用 babel-runtime 不会去污染全局环境
+
+如果开发第三方库，必须使用 babel-runtime
 
 
 
@@ -536,10 +626,77 @@ output: {
 
 
 
-## babel
-
 
 
 ## webpack 5
 
 主要是内部效率优化
+
+
+
+## 面试真题
+
+### 1. 前端为何要进行打包和构建
+
+1. 代码层面
+   - 体积更小（tree-shaking、压缩、合并），加载更快
+   - 编译高级语言和语法（TS、ES6、模块化、scss）
+   - 兼容性和错误检查（polyfill、postcss、eslint）
+2. 研发流程方面
+   - 统一高效的开发环境
+   - 统一的构建流程和产出标准
+   - 集成公司的构建规范（提测、上线等）
+
+### 2. module chunk bundle 的区别
+
+- module 各个源码文件，webpack 中一切皆模块
+- chunk 多模块合并成的，来源：entry、import()、splitChunk
+- bundle 最终的输入文件，一般一个 chunk 对应一个 bundle
+
+chunk 是偏抽象的一个概念，bundle 是 chunk 的输出实体
+
+### 3. loader vs. plugin
+
+loader: 模块转换器  如：less => css
+
+plugin: 扩展插件，如 HtmlWebpackPlugin
+
+### 4. 常见的 loader 和 plugin 有哪些
+
+略
+
+### 5. babel vs. webpack
+
+- babel 只关心语法，不关心 api 不关心模块
+- webpack 打包构建工具，是多个 loader plugin 的集合，通常会结合 babel 使用
+
+### 6. 如何产出一个 lib
+
+配置 output.library
+
+### 7. babel-polyfill vs. babel-runtime
+
+略
+
+### 8. webpack 如何实现懒加载 & vue react 异步加载路由
+
+import()
+
+### 9. 为啥 proxy 不能被 polyfill
+
+如 class 可以用 function 模拟
+
+如 Promise 可以用 callback 模拟
+
+但是 proxy 的功能无法用 Object.defineProperty 模拟
+
+### 10. webpack 优化构建速度
+
+略
+
+
+
+
+
+ 
+
