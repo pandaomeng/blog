@@ -1,6 +1,12 @@
-## Bitcoin 实现
+---
+title: bitcoin 笔记
+date: 2021-08-27
+tag: [webpack]
+---
 
-### transaction-based ledger
+# Bitcoin
+
+## transaction-based ledger
 
 bitcon 是一个基于交易的账本
 
@@ -14,7 +20,7 @@ UTXO：upspent trasction output，用来防止 double spending
 
 
 
-### 比特币挖矿奖励减半
+## 比特币挖矿奖励减半
 
 比特币每 21万个区块会使挖矿奖励减半，比特币通过控制挖矿难度来控制平均每 10 分钟出一个区块，而 21万个区块差不多等于 4年。
 
@@ -22,7 +28,7 @@ UTXO：upspent trasction output，用来防止 double spending
 
 
 
-### Bernoulli trial
+## Bernoulli trial
 
 比特币挖矿的每一次尝试  nonce 都是一次 Bernoulli trial
 
@@ -109,7 +115,7 @@ mining puzzle -> Alternative mining puzzle (目的: ASIC resistance)
 
 
 
-### 矿池
+## 矿池
 
 矿池：pool manager has many miner，pool manager 也就是全节点，有很多职责，而 miner 只负责计算 hash。
 
